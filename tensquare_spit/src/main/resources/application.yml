@@ -1,0 +1,17 @@
+server:
+  port: 9006
+
+spring:
+  application: #微服务名名称，在独立一个微服务的时候没用！！！ 另一个微服务需要调用该服务非常有用！！！
+    name: tensquare_spit
+
+  data:
+   mongodb:
+     host: 192.168.66.133
+     port: 27017
+     database: spitdb
+
+  redis:
+    host: 192.168.66.133
+    port: 6379
+

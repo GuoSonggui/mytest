@@ -1,0 +1,20 @@
+server:
+  port: 9009
+spring:
+  application:
+    name: tensquare-sms
+  rabbitmq:
+    host: 192.168.66.133
+    listener:   # 开启ACK
+      direct:
+        acknowledge-mode: manual
+      simple:
+        acknowledge-mode: manual
+    publisher-confirms: true  # 需要手动确定消息是否发送成功
+    publisher-returns: true   # 如果发送失败退出
+aliyun:
+  sms:
+    temp_code: SMS_100735040
+    sign_name: 物流系统
+    accessKeyId: LTAI0DByuBGlQzS9
+    accessKeySecret: OygoBAVQRuCt4vf97Nfwav2NN8gcr2

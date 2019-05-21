@@ -1,0 +1,22 @@
+server:   # 端口
+  port: 9201
+spring:
+  application:   # 微服务名称，在独立一个微服务的时候没用！！！另一个微服务需要调用该服务非常有用！！
+    name: tensquare-base
+  datasource:  # 数据源
+    url: jdbc:mysql://192.168.66.133:3306/tensquare_base?characterEncoding=UTF8
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 123456
+  jpa: # jpa配置
+    show-sql: true # 打印sql语句，方便调试
+    generate-ddl: true # 自动维护表
+# 注册Eureka信息
+eureka:
+  client:
+    register-with-eureka: true  # 服务提供方需要为true
+    fetch-registry: false  # 通常服务消费方需要为true
+    service-url:  # Eureke注册地址
+      defaultZone: http://127.0.0.1:6868/eureka
+  instance:
+    prefer-ip-address: true # 默认false。优先使用IP地址进行注册，该配置作为服务提供方的配置
